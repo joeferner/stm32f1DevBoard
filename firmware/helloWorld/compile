@@ -1,6 +1,0 @@
-#!/bin/bash
-
-mkdir build
-arm-none-eabi-gcc -I. -c -fno-common -O0 -g -mcpu=cortex-m3 -mthumb main.c -o build/main.o
-arm-none-eabi-ld -Tstm32.ld -nostartfiles -o build/main.elf build/main.o
-arm-none-eabi-objcopy -Obinary build/main.elf build/main.bin

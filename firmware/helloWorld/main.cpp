@@ -13,7 +13,6 @@ __attribute__ ((section("vectors"))) = {
   (unsigned int *) hardfault_handler  // hard fault handler
 };
 
-
 int main() {
   int i = 0;
 
