@@ -1,4 +1,4 @@
-EESchema-DOCLIB  Version 2.0  Date: Thu 13 Dec 2012 09:57:14 AM EST
+EESchema-DOCLIB  Version 2.0  Date: Thu 13 Dec 2012 10:57:14 AM EST
 #
 $CMP BTN_SPST
 D Single Pole, Single Throw Button
@@ -8,6 +8,11 @@ $ENDCMP
 $CMP CRYSTAL
 D Crystal
 K xtal crystal
+$ENDCMP
+#
+$CMP STM32F102XX
+D STM Low Density ARM Processor
+K arm
 $ENDCMP
 #
 #End Doc Library
