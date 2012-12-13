@@ -1,0 +1,13 @@
+EESchema-DOCLIB  Version 2.0  Date: Thu 13 Dec 2012 09:57:14 AM EST
+#
+$CMP BTN_SPST
+D Single Pole, Single Throw Button
+K switch button
+$ENDCMP
+#
+$CMP CRYSTAL
+D Crystal
+K xtal crystal
+$ENDCMP
+#
+#End Doc Library

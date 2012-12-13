@@ -1,0 +1,326 @@
+EESchema Schematic File Version 2  date Thu 13 Dec 2012 09:57:17 AM EST
+LIBS:stm32f1DevBoard
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:special
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+EELAYER 27 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date "13 dec 2012"
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L GND #PWR?
+U 1 1 50C94942
+P 3350 2750
+F 0 "#PWR?" H 3350 2750 30  0001 C CNN
+F 1 "GND" H 3350 2680 30  0001 C CNN
+	1    3350 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L +3.3V #PWR?
+U 1 1 50C949CA
+P 4150 1450
+F 0 "#PWR?" H 4150 1410 30  0001 C CNN
+F 1 "+3.3V" H 4150 1560 30  0000 C CNN
+	1    4150 1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 50C94D41
+P 2950 2050
+F 0 "#PWR?" H 2950 2050 30  0001 C CNN
+F 1 "GND" H 2950 1980 30  0001 C CNN
+	1    2950 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L CSMALL C?
+U 1 1 50C94FAE
+P 3750 2450
+F 0 "C?" H 3775 2500 30  0000 L CNN
+F 1 "0.1uF" H 3775 2400 30  0000 L CNN
+	1    3750 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L CSMALL C?
+U 1 1 50C94FCA
+P 3550 2450
+F 0 "C?" H 3575 2500 30  0000 L CNN
+F 1 "0.1uF" H 3575 2400 30  0000 L CNN
+	1    3550 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L CSMALL C?
+U 1 1 50C94FD0
+P 3350 2450
+F 0 "C?" H 3375 2500 30  0000 L CNN
+F 1 "0.1uF" H 3375 2400 30  0000 L CNN
+	1    3350 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L CSMALL C?
+U 1 1 50C94FD6
+P 3750 1750
+F 0 "C?" H 3775 1800 30  0000 L CNN
+F 1 "0.1uF" H 3775 1700 30  0000 L CNN
+	1    3750 1750
+	1    0    0    -1  
+$EndComp
+$Comp
+L CSMALL C?
+U 1 1 50C94FDC
+P 3550 1750
+F 0 "C?" H 3575 1800 30  0000 L CNN
+F 1 "0.1uF" H 3575 1700 30  0000 L CNN
+	1    3550 1750
+	1    0    0    -1  
+$EndComp
+$Comp
+L CSMALL C?
+U 1 1 50C94FE2
+P 3350 1750
+F 0 "C?" H 3375 1800 30  0000 L CNN
+F 1 "0.1uF" H 3375 1700 30  0000 L CNN
+	1    3350 1750
+	1    0    0    -1  
+$EndComp
+$Comp
+L CSMALL C?
+U 1 1 50C94FE8
+P 3150 1750
+F 0 "C?" H 3175 1800 30  0000 L CNN
+F 1 "0.1uF" H 3175 1700 30  0000 L CNN
+	1    3150 1750
+	1    0    0    -1  
+$EndComp
+$Comp
+L CSMALL C?
+U 1 1 50C94FEE
+P 2950 1750
+F 0 "C?" H 2975 1800 30  0000 L CNN
+F 1 "0.1uF" H 2975 1700 30  0000 L CNN
+	1    2950 1750
+	1    0    0    -1  
+$EndComp
+$Comp
+L BTN_SPST S?
+U 1 1 50C952D1
+P 3700 3100
+F 0 "S?" H 3650 3400 60  0000 C CNN
+F 1 "RST" H 3700 3000 60  0000 C CNN
+	1    3700 3100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4250 2750 4150 2750
+Wire Wire Line
+	4150 2750 4150 2250
+Connection ~ 4150 2250
+Wire Wire Line
+	4250 2650 4150 2650
+Connection ~ 4150 2650
+Wire Wire Line
+	4250 2550 4150 2550
+Connection ~ 4150 2550
+Wire Wire Line
+	4150 1450 4150 1950
+Connection ~ 4150 1950
+Wire Wire Line
+	4250 1850 4150 1850
+Connection ~ 4150 1850
+Wire Wire Line
+	4250 1750 4150 1750
+Connection ~ 4150 1750
+Wire Wire Line
+	4250 1650 4150 1650
+Connection ~ 4150 1650
+Wire Wire Line
+	4150 1950 4250 1950
+Connection ~ 4150 1550
+Wire Wire Line
+	4250 1550 2950 1550
+Wire Wire Line
+	2950 1550 2950 1650
+Wire Wire Line
+	3150 1650 3150 1550
+Connection ~ 3150 1550
+Wire Wire Line
+	3350 1650 3350 1550
+Connection ~ 3350 1550
+Wire Wire Line
+	3550 1650 3550 1550
+Connection ~ 3550 1550
+Wire Wire Line
+	3750 1650 3750 1550
+Connection ~ 3750 1550
+Wire Wire Line
+	3750 1850 3750 1950
+Wire Wire Line
+	3750 1950 2950 1950
+Wire Wire Line
+	2950 1850 2950 2050
+Connection ~ 2950 1950
+Wire Wire Line
+	3150 1850 3150 1950
+Connection ~ 3150 1950
+Wire Wire Line
+	3350 1850 3350 1950
+Connection ~ 3350 1950
+Wire Wire Line
+	3550 1850 3550 1950
+Connection ~ 3550 1950
+Wire Wire Line
+	4250 2250 3350 2250
+Wire Wire Line
+	3350 2250 3350 2350
+Wire Wire Line
+	3550 2350 3550 2250
+Connection ~ 3550 2250
+Wire Wire Line
+	3750 2350 3750 2250
+Connection ~ 3750 2250
+Wire Wire Line
+	3350 2550 3350 2750
+Wire Wire Line
+	3750 2550 3750 2650
+Wire Wire Line
+	3750 2650 3350 2650
+Connection ~ 3350 2650
+Wire Wire Line
+	3550 2550 3550 2650
+Connection ~ 3550 2650
+Wire Wire Line
+	3950 3100 4000 3100
+Connection ~ 4000 3000
+$Comp
+L GND #PWR?
+U 1 1 50C9550D
+P 3350 3200
+F 0 "#PWR?" H 3350 3200 30  0001 C CNN
+F 1 "GND" H 3350 3130 30  0001 C CNN
+	1    3350 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3450 3000 3350 3000
+Wire Wire Line
+	3350 3000 3350 3200
+Wire Wire Line
+	3450 3100 3350 3100
+Connection ~ 3350 3100
+Wire Wire Line
+	4250 3000 3950 3000
+Wire Wire Line
+	4000 3100 4000 3000
+$Comp
+L GND #PWR?
+U 1 1 50C95BDE
+P 4150 4650
+F 0 "#PWR?" H 4150 4650 30  0001 C CNN
+F 1 "GND" H 4150 4580 30  0001 C CNN
+	1    4150 4650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4250 4450 4150 4450
+Wire Wire Line
+	4150 4450 4150 4650
+Wire Wire Line
+	4250 4550 4150 4550
+Connection ~ 4150 4550
+$Comp
+L CRYSTAL X?
+U 1 1 50C960EA
+P 2800 4200
+F 0 "X?" H 2800 4325 60  0000 C CNN
+F 1 "20MHz" H 2800 4075 60  0000 C CNN
+	1    2800 4200
+	1    0    0    -1  
+$EndComp
+$Comp
+L CRYSTAL X?
+U 1 1 50C963F7
+P 3500 4200
+F 0 "X?" H 3500 4325 60  0000 C CNN
+F 1 "32,768Hz" H 3500 4075 60  0000 C CNN
+	1    3500 4200
+	1    0    0    -1  
+$EndComp
+$Comp
+L CSMALL C?
+U 1 1 50C9642F
+P 3750 4350
+F 0 "C?" H 3775 4400 30  0000 L CNN
+F 1 "0.1uF" H 3775 4300 30  0000 L CNN
+	1    3750 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L CSMALL C?
+U 1 1 50C96435
+P 3250 4350
+F 0 "C?" H 3275 4400 30  0000 L CNN
+F 1 "0.1uF" H 3275 4300 30  0000 L CNN
+	1    3250 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L CSMALL C?
+U 1 1 50C9643B
+P 3050 4350
+F 0 "C?" H 3075 4400 30  0000 L CNN
+F 1 "0.1uF" H 3075 4300 30  0000 L CNN
+	1    3050 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L CSMALL C?
+U 1 1 50C9644B
+P 2550 4350
+F 0 "C?" H 2575 4400 30  0000 L CNN
+F 1 "0.1uF" H 2575 4300 30  0000 L CNN
+	1    2550 4350
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC
