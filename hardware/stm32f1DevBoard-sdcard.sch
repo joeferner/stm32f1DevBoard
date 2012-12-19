@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sun 16 Dec 2012 03:06:52 PM EST
+EESchema Schematic File Version 2  date Sun 16 Dec 2012 11:20:27 PM EST
 LIBS:stm32f1DevBoard
 LIBS:power
 LIBS:device
@@ -37,7 +37,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 4 4
 Title ""
-Date "16 dec 2012"
+Date "17 dec 2012"
 Rev ""
 Comp ""
 Comment1 ""
