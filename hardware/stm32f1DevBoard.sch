@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sun 16 Dec 2012 11:20:27 PM EST
+EESchema Schematic File Version 2  date Tue 18 Dec 2012 10:27:06 PM EST
 LIBS:stm32f1DevBoard
 LIBS:power
 LIBS:device
@@ -37,7 +37,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 4
 Title ""
-Date "17 dec 2012"
+Date "19 dec 2012"
 Rev ""
 Comp ""
 Comment1 ""
@@ -142,14 +142,14 @@ P 3550 2400
 F 0 "X1" H 3550 2525 60  0000 C CNN
 F 1 "32,768Hz" H 3550 2275 60  0000 C CNN
 	1    3550 2400
-	1    0    0    -1  
+	-1   0    0    1   
 $EndComp
 $Comp
 L CSMALL C8
 U 1 1 50C9642F
 P 3800 2550
 F 0 "C8" H 3825 2600 30  0000 L CNN
-F 1 "0.1uF" H 3825 2500 30  0000 L CNN
+F 1 "22pF" H 3825 2500 30  0000 L CNN
 	1    3800 2550
 	1    0    0    -1  
 $EndComp
@@ -158,7 +158,7 @@ L CSMALL C3
 U 1 1 50C96435
 P 3300 2550
 F 0 "C3" H 3325 2600 30  0000 L CNN
-F 1 "0.1uF" H 3325 2500 30  0000 L CNN
+F 1 "22pF" H 3325 2500 30  0000 L CNN
 	1    3300 2550
 	1    0    0    -1  
 $EndComp
@@ -167,7 +167,7 @@ L CSMALL C9
 U 1 1 50C9643B
 P 3800 3050
 F 0 "C9" H 3825 3100 30  0000 L CNN
-F 1 "0.1uF" H 3825 3000 30  0000 L CNN
+F 1 "22pF" H 3825 3000 30  0000 L CNN
 	1    3800 3050
 	1    0    0    -1  
 $EndComp
@@ -176,7 +176,7 @@ L CSMALL C4
 U 1 1 50C9644B
 P 3300 3050
 F 0 "C4" H 3325 3100 30  0000 L CNN
-F 1 "0.1uF" H 3325 3000 30  0000 L CNN
+F 1 "22pF" H 3325 3000 30  0000 L CNN
 	1    3300 3050
 	1    0    0    -1  
 $EndComp
@@ -933,4 +933,40 @@ Wire Wire Line
 	2600 3350 2650 3350
 Wire Wire Line
 	4350 1950 4400 1950
+$Comp
+L MECH M1
+U 1 1 50D1344C
+P 5700 5800
+F 0 "M1" H 5750 5800 60  0000 C CNN
+F 1 "Mounting Hole" H 5900 5800 60  0000 L CNN
+	1    5700 5800
+	1    0    0    -1  
+$EndComp
+$Comp
+L MECH M2
+U 1 1 50D13459
+P 5700 5900
+F 0 "M2" H 5750 5900 60  0000 C CNN
+F 1 "Mounting Hole" H 5900 5900 60  0000 L CNN
+	1    5700 5900
+	1    0    0    -1  
+$EndComp
+$Comp
+L MECH M3
+U 1 1 50D1345F
+P 5700 6000
+F 0 "M3" H 5750 6000 60  0000 C CNN
+F 1 "Mounting Hole" H 5900 6000 60  0000 L CNN
+	1    5700 6000
+	1    0    0    -1  
+$EndComp
+$Comp
+L MECH M4
+U 1 1 50D13465
+P 5700 6100
+F 0 "M4" H 5750 6100 60  0000 C CNN
+F 1 "Mounting Hole" H 5900 6100 60  0000 L CNN
+	1    5700 6100
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

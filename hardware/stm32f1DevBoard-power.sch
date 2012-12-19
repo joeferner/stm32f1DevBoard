@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sun 16 Dec 2012 11:20:27 PM EST
+EESchema Schematic File Version 2  date Tue 18 Dec 2012 10:27:06 PM EST
 LIBS:stm32f1DevBoard
 LIBS:power
 LIBS:device
@@ -37,7 +37,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 3 4
 Title ""
-Date "17 dec 2012"
+Date "19 dec 2012"
 Rev ""
 Comp ""
 Comment1 ""
@@ -500,19 +500,19 @@ Wire Wire Line
 	3900 6350 4000 6350
 Connection ~ 5100 6250
 $Comp
-L GND #PWR?
+L GND #PWR055
 U 1 1 50CEA124
 P 4400 6700
-F 0 "#PWR?" H 4400 6700 30  0001 C CNN
+F 0 "#PWR055" H 4400 6700 30  0001 C CNN
 F 1 "GND" H 4400 6630 30  0001 C CNN
 	1    4400 6700
 	1    0    0    -1  
 $EndComp
 $Comp
-L +5V #PWR?
+L +5V #PWR056
 U 1 1 50CEA12A
 P 4400 5800
-F 0 "#PWR?" H 4400 5890 20  0001 C CNN
+F 0 "#PWR056" H 4400 5890 20  0001 C CNN
 F 1 "+5V" H 4400 5890 30  0000 C CNN
 	1    4400 5800
 	1    0    0    -1  
