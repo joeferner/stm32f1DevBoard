@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-nov-02)-testing date = Wed 19 Dec 2012 08:48:37 PM EST
+Cmp-Mod V01 Created by CvPcb (2012-nov-02)-testing date = Wed 19 Dec 2012 11:05:59 PM EST
 
 BeginCmp
 TimeStamp = /50CE2AC2/50CE2BEC;
@@ -281,10 +281,10 @@ IdModule  = PIN_ARRAY_3X1;
 EndCmp
 
 BeginCmp
-TimeStamp = /50CE2AC2/50CE2C67;
+TimeStamp = /50CE2AC2/50D29082;
 Reference = Q1;
-ValeurCmp = MOSFET-N;
-IdModule  = SOT223-132;
+ValeurCmp = MOSFET-P;
+IdModule  = SOT223-321;
 EndCmp
 
 BeginCmp
@@ -381,28 +381,28 @@ EndCmp
 BeginCmp
 TimeStamp = /50CE2AC2/50CE2C42;
 Reference = R14;
-ValeurCmp = ?;
+ValeurCmp = 68k;
 IdModule  = SM0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /50CE2AC2/50CE2C48;
 Reference = R15;
-ValeurCmp = ?;
+ValeurCmp = 33k;
 IdModule  = SM0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /50CE2AC2/50CE2C36;
 Reference = R16;
-ValeurCmp = ?;
+ValeurCmp = 100k;
 IdModule  = SM0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /50CE2AC2/50CE2C3C;
 Reference = R17;
-ValeurCmp = ?;
+ValeurCmp = 100k;
 IdModule  = SM0805;
 EndCmp
 
