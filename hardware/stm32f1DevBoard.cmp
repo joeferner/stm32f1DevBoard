@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-nov-02)-testing date = Tue 18 Dec 2012 10:24:27 PM EST
+Cmp-Mod V01 Created by CvPcb (2012-nov-02)-testing date = Wed 19 Dec 2012 08:48:37 PM EST
 
 BeginCmp
 TimeStamp = /50CE2AC2/50CE2BEC;
@@ -24,14 +24,14 @@ EndCmp
 BeginCmp
 TimeStamp = /50C96435;
 Reference = C3;
-ValeurCmp = 0.1uF;
+ValeurCmp = 22pF;
 IdModule  = SM0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /50C9644B;
 Reference = C4;
-ValeurCmp = 0.1uF;
+ValeurCmp = 22pF;
 IdModule  = SM0805;
 EndCmp
 
@@ -59,14 +59,14 @@ EndCmp
 BeginCmp
 TimeStamp = /50C9642F;
 Reference = C8;
-ValeurCmp = 0.1uF;
+ValeurCmp = 22pF;
 IdModule  = SM0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /50C9643B;
 Reference = C9;
-ValeurCmp = 0.1uF;
+ValeurCmp = 22pF;
 IdModule  = SM0805;
 EndCmp
 
@@ -138,6 +138,13 @@ TimeStamp = /50CE2AC2/50CE2CEA;
 Reference = D2;
 ValeurCmp = POWERLED;
 IdModule  = LED-1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /50D1CB86;
+Reference = F1;
+ValeurCmp = FUSE;
+IdModule  = SM1206;
 EndCmp
 
 BeginCmp
@@ -277,7 +284,7 @@ BeginCmp
 TimeStamp = /50CE2AC2/50CE2C67;
 Reference = Q1;
 ValeurCmp = MOSFET-N;
-IdModule  = SOT23;
+IdModule  = SOT223-132;
 EndCmp
 
 BeginCmp
