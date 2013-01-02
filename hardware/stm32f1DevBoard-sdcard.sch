@@ -1,36 +1,6 @@
-EESchema Schematic File Version 2  date Wed 19 Dec 2012 11:05:56 PM EST
-LIBS:stm32f1DevBoard
+EESchema Schematic File Version 2  date Wed 02 Jan 2013 12:15:05 PM EST
+LIBS:userFavorites
 LIBS:power
-LIBS:device
-LIBS:transistors
-LIBS:conn
-LIBS:linear
-LIBS:regul
-LIBS:74xx
-LIBS:cmos4000
-LIBS:adc-dac
-LIBS:memory
-LIBS:xilinx
-LIBS:special
-LIBS:microcontrollers
-LIBS:dsp
-LIBS:microchip
-LIBS:analog_switches
-LIBS:motorola
-LIBS:texas
-LIBS:intel
-LIBS:audio
-LIBS:interface
-LIBS:digital-audio
-LIBS:philips
-LIBS:display
-LIBS:cypress
-LIBS:siliconi
-LIBS:opto
-LIBS:atmel
-LIBS:contrib
-LIBS:valves
-LIBS:stm32f1DevBoard-cache
 EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
@@ -92,7 +62,7 @@ Wire Wire Line
 Wire Wire Line
 	5600 3400 5100 3400
 $Comp
-L CSMALL C17
+L CPsmall C17
 U 1 1 50CE3324
 P 7750 4600
 F 0 "C17" H 7775 4650 30  0000 L CNN

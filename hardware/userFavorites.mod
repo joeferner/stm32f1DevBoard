@@ -1,0 +1,5 @@
+PCBNEW-LibModule-V1  01/02/2013 22:24:47
+#encoding utf-8
+$INDEX
+$EndINDEX
+$EndLIBRARY

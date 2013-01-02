@@ -1,36 +1,6 @@
-EESchema Schematic File Version 2  date Wed 19 Dec 2012 11:05:56 PM EST
-LIBS:stm32f1DevBoard
+EESchema Schematic File Version 2  date Wed 02 Jan 2013 12:15:05 PM EST
+LIBS:userFavorites
 LIBS:power
-LIBS:device
-LIBS:transistors
-LIBS:conn
-LIBS:linear
-LIBS:regul
-LIBS:74xx
-LIBS:cmos4000
-LIBS:adc-dac
-LIBS:memory
-LIBS:xilinx
-LIBS:special
-LIBS:microcontrollers
-LIBS:dsp
-LIBS:microchip
-LIBS:analog_switches
-LIBS:motorola
-LIBS:texas
-LIBS:intel
-LIBS:audio
-LIBS:interface
-LIBS:digital-audio
-LIBS:philips
-LIBS:display
-LIBS:cypress
-LIBS:siliconi
-LIBS:opto
-LIBS:atmel
-LIBS:contrib
-LIBS:valves
-LIBS:stm32f1DevBoard-cache
 EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
@@ -64,7 +34,7 @@ F 1 "GND" H 3300 1980 30  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CSMALL C10
+L CPsmall C10
 U 1 1 50C94FDC
 P 3900 1750
 F 0 "C10" H 3925 1800 30  0000 L CNN
@@ -73,7 +43,7 @@ F 1 "0.1uF" H 3925 1700 30  0000 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CSMALL C6
+L CPsmall C6
 U 1 1 50C94FE2
 P 3700 1750
 F 0 "C6" H 3725 1800 30  0000 L CNN
@@ -82,7 +52,7 @@ F 1 "0.1uF" H 3725 1700 30  0000 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CSMALL C5
+L CPsmall C5
 U 1 1 50C94FE8
 P 3500 1750
 F 0 "C5" H 3525 1800 30  0000 L CNN
@@ -91,7 +61,7 @@ F 1 "0.1uF" H 3525 1700 30  0000 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CSMALL C2
+L CPsmall C2
 U 1 1 50C94FEE
 P 3300 1750
 F 0 "C2" H 3325 1800 30  0000 L CNN
@@ -145,7 +115,7 @@ F 1 "32,768Hz" H 3550 2275 60  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L CSMALL C8
+L CPsmall C8
 U 1 1 50C9642F
 P 3800 2550
 F 0 "C8" H 3825 2600 30  0000 L CNN
@@ -154,7 +124,7 @@ F 1 "22pF" H 3825 2500 30  0000 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CSMALL C3
+L CPsmall C3
 U 1 1 50C96435
 P 3300 2550
 F 0 "C3" H 3325 2600 30  0000 L CNN
@@ -163,7 +133,7 @@ F 1 "22pF" H 3325 2500 30  0000 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CSMALL C9
+L CPsmall C9
 U 1 1 50C9643B
 P 3800 3050
 F 0 "C9" H 3825 3100 30  0000 L CNN
@@ -172,7 +142,7 @@ F 1 "22pF" H 3825 3000 30  0000 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CSMALL C4
+L CPsmall C4
 U 1 1 50C9644B
 P 3300 3050
 F 0 "C4" H 3325 3100 30  0000 L CNN
@@ -217,7 +187,7 @@ F 1 "GND" H 3800 3130 30  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CSMALL C7
+L CPsmall C7
 U 1 1 50CA0DBA
 P 3750 4250
 F 0 "C7" H 3775 4300 30  0000 L CNN
@@ -370,7 +340,7 @@ F 1 "JTAG_ENABLE" H 1350 6500 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CSMALL C1
+L CPsmall C1
 U 1 1 50CBFE42
 P 3100 1750
 F 0 "C1" H 3125 1800 30  0000 L CNN

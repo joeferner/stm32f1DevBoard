@@ -1,36 +1,6 @@
-EESchema Schematic File Version 2  date Wed 19 Dec 2012 11:05:56 PM EST
-LIBS:stm32f1DevBoard
+EESchema Schematic File Version 2  date Wed 02 Jan 2013 12:15:05 PM EST
+LIBS:userFavorites
 LIBS:power
-LIBS:device
-LIBS:transistors
-LIBS:conn
-LIBS:linear
-LIBS:regul
-LIBS:74xx
-LIBS:cmos4000
-LIBS:adc-dac
-LIBS:memory
-LIBS:xilinx
-LIBS:special
-LIBS:microcontrollers
-LIBS:dsp
-LIBS:microchip
-LIBS:analog_switches
-LIBS:motorola
-LIBS:texas
-LIBS:intel
-LIBS:audio
-LIBS:interface
-LIBS:digital-audio
-LIBS:philips
-LIBS:display
-LIBS:cypress
-LIBS:siliconi
-LIBS:opto
-LIBS:atmel
-LIBS:contrib
-LIBS:valves
-LIBS:stm32f1DevBoard-cache
 EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
@@ -172,7 +142,7 @@ F 1 "GND" H 5800 5430 30  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CSMALL C11
+L CPsmall C11
 U 1 1 50CE2658
 P 5900 2200
 F 0 "C11" H 5925 2250 30  0000 L CNN
@@ -181,7 +151,7 @@ F 1 "10uF" H 5925 2150 30  0000 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CSMALL C12
+L CPsmall C12
 U 1 1 50CE265E
 P 6100 2200
 F 0 "C12" H 6125 2250 30  0000 L CNN
@@ -190,7 +160,7 @@ F 1 "0.1uF" H 6125 2150 30  0000 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CSMALL C13
+L CPsmall C13
 U 1 1 50CE2664
 P 6300 2200
 F 0 "C13" H 6325 2250 30  0000 L CNN
