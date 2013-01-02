@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source /home/jferner/dev/stm32f1DevBoard/hardware/stm32f1DevBoard.sch)
-    (date "Wed 19 Dec 2012 10:57:00 PM EST")
+    (date "Sun 30 Dec 2012 11:26:32 PM EST")
     (tool "eeschema (2012-nov-02)-testing"))
   (components
     (comp (ref C10)
@@ -355,6 +355,17 @@
         (pin (num 2) (name ~) (type BiDi))
         (pin (num 3) (name ~) (type BiDi))
         (pin (num 4) (name ~) (type BiDi))))
+    (libpart (lib stm32f1DevBoard) (part CPsmall)
+      (footprints
+        (fp SM*)
+        (fp C?)
+        (fp C1-1))
+      (fields
+        (field (name Reference) C)
+        (field (name Value) CPsmall))
+      (pins
+        (pin (num 1) (name ~) (type passive))
+        (pin (num 2) (name ~) (type passive))))
     (libpart (lib stm32f1DevBoard) (part JTAG)
       (fields
         (field (name Reference) P)
@@ -395,17 +406,6 @@
         (pin (num 1) (name ~) (type BiDi))
         (pin (num 2) (name ~) (type BiDi))
         (pin (num 3) (name ~) (type BiDi))))
-    (libpart (lib stm32f1DevBoard) (part CPsmall)
-      (footprints
-        (fp SM*)
-        (fp C?)
-        (fp C1-1))
-      (fields
-        (field (name Reference) C)
-        (field (name Value) CPsmall))
-      (pins
-        (pin (num 1) (name ~) (type passive))
-        (pin (num 2) (name ~) (type passive))))
     (libpart (lib stm32f1DevBoard) (part CRYSTAL)
       (description Crystal)
       (fields
@@ -418,6 +418,14 @@
       (fields
         (field (name Reference) M)
         (field (name Value) MECH)))
+    (libpart (lib stm32f1DevBoard) (part MOSFET-P)
+      (fields
+        (field (name Reference) Q)
+        (field (name Value) MOSFET-P))
+      (pins
+        (pin (num 1) (name ~) (type input))
+        (pin (num 2) (name ~) (type input))
+        (pin (num 3) (name ~) (type input))))
     (libpart (lib stm32f1DevBoard) (part MRF24WB0MX)
       (description "MicroChip Wifi")
       (fields
@@ -669,15 +677,7 @@
         (pin (num 5) (name +) (type input))
         (pin (num 6) (name -) (type input))
         (pin (num 7) (name ~) (type output))
-        (pin (num 8) (name V+) (type power_in))))
-    (libpart (lib stm32f1DevBoard) (part MOSFET-P)
-      (fields
-        (field (name Reference) Q)
-        (field (name Value) MOSFET-P))
-      (pins
-        (pin (num 1) (name ~) (type input))
-        (pin (num 2) (name ~) (type input))
-        (pin (num 3) (name ~) (type input)))))
+        (pin (num 8) (name V+) (type power_in)))))
   (libraries
     (library (logical device)
       (uri /usr/share/kicad/library/device.lib))
