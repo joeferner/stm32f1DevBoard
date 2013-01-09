@@ -8,12 +8,12 @@ extern "C" {
 
 #include "stm32.h"
 
-  void spi_init(unsigned int speed, unsigned int bitOrder, unsigned int mode);
-  unsigned char spi_send_buffer(unsigned char* c, unsigned int len);
-  unsigned char spi_send(unsigned char c);
+  void spi1_init(unsigned int speed, unsigned int bitOrder, unsigned int mode);
+  unsigned char spi1_send_buffer(unsigned char* c, unsigned int len);
+  unsigned char spi1_send(unsigned char c);
 
-  void spi_tx(unsigned char c);
-  unsigned char spi_rx();
+  void spi1_tx(unsigned char c);
+  unsigned char spi1_rx();
 
 #ifdef	__cplusplus
 }

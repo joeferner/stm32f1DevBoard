@@ -10,7 +10,17 @@
 
 #include "io.h"
 
+#ifdef	__cplusplus
+extern "C" {
+#endif
+
 #define STM32_DELAY_US_MULT (STM32_SYSCLK / 3600000)
+
+  void stm32_init();
+
+#ifdef	__cplusplus
+}
+#endif
 
 #endif	/* STM32_H */
 

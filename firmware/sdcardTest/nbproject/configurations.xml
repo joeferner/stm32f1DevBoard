@@ -2,10 +2,6 @@
 <configurationDescriptor version="84">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <df name="lib" root="../lib">
-      <df name="sdcard">
-        <in>sdcard.c</in>
-        <in>sdcard.h</in>
-      </df>
       <df name="uip">
         <df name="apps">
           <df name="dhcpc">
@@ -145,8 +141,11 @@
       <in>gpio.h</in>
       <in>io.h</in>
       <in>io_STM32F103x.h</in>
+      <in>sdcard_spi.c</in>
+      <in>sdcard_spi.h</in>
       <in>spi.c</in>
       <in>spi.h</in>
+      <in>stm32.c</in>
       <in>stm32.h</in>
       <in>usart.c</in>
       <in>usart.h</in>
@@ -158,8 +157,6 @@
           </df>
           <df name="uip">
           </df>
-        </df>
-        <df name="sdcard">
         </df>
         <df name="uip">
         </df>
@@ -202,6 +199,7 @@
               <Elem>STM32F103x</Elem>
               <Elem>STM32_FPCLK2=72000000</Elem>
               <Elem>STM32_SYSCLK=72000000</Elem>
+              <Elem>VECT_TAB_FLASH</Elem>
             </preprocessorList>
           </cTool>
           <ccTool>
@@ -213,6 +211,7 @@
               <Elem>STM32F103x</Elem>
               <Elem>STM32_FPCLK2=72000000</Elem>
               <Elem>STM32_SYSCLK=72000000</Elem>
+              <Elem>VECT_TAB_FLASH</Elem>
             </preprocessorList>
           </ccTool>
         </makeTool>

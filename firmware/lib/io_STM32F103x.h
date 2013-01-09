@@ -4,6 +4,21 @@
 
 /* FLASH and SRAM *******************************************************************/
 #define STM32_FLASH_BASE     0x08000000     /* 0x08000000 - Up to 512Kb */
+#define STM32_FLASH_ACR      (*((volatile unsigned long*)(STM32_FLASH_BASE + 0x0)))
+
+/**
+ * PRFTBE: Prefetch buffer enable
+ */
+#define STM32_FLASH_ACR_PRFTBE (1<<4)
+
+/**
+ * LATENCY: Latency
+ */
+#define STM32_FLASH_ACR_LATENCY_MASK (0x7<<0)
+#define STM32_FLASH_ACR_LATENCY_0    (0x0<<0)
+#define STM32_FLASH_ACR_LATENCY_1    (0x1<<0)
+#define STM32_FLASH_ACR_LATENCY_2    (0x2<<0)
+
 #define STM32_SRAM_BASE      0x20000000     /* 0x20000000 - 64Kb SRAM */
 #define STM32_SRAMBB_BASE    0x22000000
 #define STM32_PERIPH_BASE    0x40000000
@@ -214,6 +229,30 @@
  */
 
 #define STM32_SCS_BASE       0xe000e000
+
+/**
+ * SysTick register map base pointer
+ */
+#define STM32_SYSTICK_BASE   0xE000E010
+#define STM32_SYSTICK_CSR    (*((volatile unsigned int*)(STM32_SYSTICK_BASE + 0x00)))
+#define STM32_SYSTICK_CSR_CLKSOURCE_CORE (1<<2);
+#define STM32_SYSTICK_CSR_TICKINT_PEND   (1<<1);
+#define STM32_SYSTICK_CSR_ENABLE         (1<<0);
+
+#define STM32_SYSTICK_RVR    (*((volatile unsigned int*)(STM32_SYSTICK_BASE + 0x04)))
+#define STM32_SYSTICK_CNT    (*((volatile unsigned int*)(STM32_SYSTICK_BASE + 0x08)))
+#define STM32_SYSTICK_CVR    (*((volatile unsigned int*)(STM32_SYSTICK_BASE + 0x0C)))
+
+/** System control block register map base pointer */
+#define STM32_SCB_BASE       0xE000ED00
+#define STM32_SCB_CPUID      (*((volatile unsigned int*)(STM32_SCB_BASE + 0x00)))
+#define STM32_SCB_ICSR       (*((volatile unsigned int*)(STM32_SCB_BASE + 0x04)))
+#define STM32_SCB_VTOR       (*((volatile unsigned int*)(STM32_SCB_BASE + 0x08)))
+#define STM32_SCB_AIRCR      (*((volatile unsigned int*)(STM32_SCB_BASE + 0x0C)))
+#define STM32_SCB_SCR        (*((volatile unsigned int*)(STM32_SCB_BASE + 0x10)))
+#define STM32_SCB_CCR        (*((volatile unsigned int*)(STM32_SCB_BASE + 0x14)))
+#define STM32_SCB_SHP        (*((volatile unsigned int*)(STM32_SCB_BASE + 0x18)))
+
 #define STM32_DEBUGMCU_BASE  0xe0042000
 
 #define STM32_USART1_SR    (*((volatile unsigned int*)(STM32_USART1_BASE + 0x00)))

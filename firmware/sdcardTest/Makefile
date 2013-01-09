@@ -6,7 +6,16 @@ LD = arm-none-eabi-g++
 CP = arm-none-eabi-objcopy
 OD = arm-none-eabi-objdump
 
-CFLAGS = -DSTM32F103x -DSTM32_SYSCLK=72000000 -DSTM32_FPCLK2=72000000 -I. -I../lib/ -I../lib/uip/uip/ -I../lib/sdcard/ -c -fno-common -O0 -g -mcpu=cortex-m3 -mthumb -fno-exceptions
+CFLAGS = \
+  -DVECT_TAB_FLASH \
+  -DSTM32F103x \
+  -DSTM32_SYSCLK=72000000 \
+  -DSTM32_FPCLK2=72000000 \
+  -I. \
+  -I../lib/ \
+  -I../lib/uip/uip/ \
+  -I../lib/sdcard/ \
+  -c -fno-common -O0 -g -mcpu=cortex-m3 -mthumb -fno-rtti -fno-exceptions
 LFLAGS  = \
   -L/opt/arm-linaro-eabi-4.6/arm-none-eabi/lib/thumb/cortex-m3/ \
   -L/opt/arm-linaro-eabi-4.6/lib/gcc/arm-none-eabi/4.6.2/thumb/cortex-m3/ \
@@ -15,7 +24,7 @@ LFLAGS  = \
 CPFLAGS = -Obinary
 ODFLAGS = -S
 
-_LIB_OBJ = spi.o usart.o delay.o gpio.o
+_LIB_OBJ = stm32.o spi.o usart.o delay.o gpio.o
 LIB_OBJ = $(patsubst %,$(OUTDIR)/lib/%,$(_LIB_OBJ))
 
 _UIP_OBJ = timer.o uip.o
