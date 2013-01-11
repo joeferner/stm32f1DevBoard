@@ -21,7 +21,8 @@ void setup() {
 
 void loop() {
   toggleLED();
-  delay(100);
+  SerialUSB.println("Hello!");
+  delay(1000);
 }
 
 // Force init to be called *first*, i.e. before static object allocation.
