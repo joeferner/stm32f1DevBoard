@@ -1,0 +1,3 @@
+[submodule "firmware/libs/libmaple"]
+	path = firmware/libs/libmaple
+	url = git://github.com/leaflabs/libmaple.git
