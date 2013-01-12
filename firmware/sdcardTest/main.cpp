@@ -10,6 +10,7 @@ Sd2Card sdcard(spi1);
 void setup() {
   delay(5000);
   SerialUSB.println("Begin");
+  spi1.begin(SPI_QUARTER_SPEED, MSBFIRST, 0);
   sdcard.init(SPI_QUARTER_SPEED, SDCARD_CS);
   
   SerialUSB.print("cardSize:");
