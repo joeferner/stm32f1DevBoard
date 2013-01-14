@@ -3,4 +3,4 @@
 	url = git://github.com/leaflabs/libmaple.git
 [submodule "firmware/libs/sdcard"]
 	path = firmware/libs/sdcard
-	url = git://github.com/joeferner/maple-sdcard.git
+	url = git://github.com/joeferner/maple-sdcard
