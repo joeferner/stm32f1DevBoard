@@ -8,3 +8,14 @@
  cSRCS_$(d) += usb_lib/usb_core.c
  cSRCS_$(d) += usb_lib/usb_init.c
  cSRCS_$(d) += usb_lib/usb_mem.c
+--- ./wirish/include/wirish/boards.h	2013-01-11 11:09:20.000000000 -0500
++++ ./wirish/include/wirish/boards.h	2013-01-13 20:37:22.022919871 -0500
+@@ -167,7 +167,6 @@
+ /**
+  * @brief Feature test: nonzero iff the board has SerialUSB.
+  */
+-#define BOARD_HAVE_SERIALUSB (defined(BOARD_USB_DISC_DEV) && \
+-                              defined(BOARD_USB_DISC_BIT))
++#define BOARD_HAVE_SERIALUSB 0
+ 
+ #endif

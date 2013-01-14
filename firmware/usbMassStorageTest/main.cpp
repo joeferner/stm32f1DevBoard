@@ -3,7 +3,6 @@
 #include <usbMassStorage/usbMassStorage.h>
 
 void setup() {
-  SerialUSB.end();
   USBMassStorage.begin();
 
   pinMode(BOARD_LED_PIN, OUTPUT);
