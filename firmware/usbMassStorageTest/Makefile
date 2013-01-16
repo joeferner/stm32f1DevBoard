@@ -18,7 +18,7 @@ outdir:
 libmaple:
 	-rsync -a $(LIBDIR)/libmaple/ $(OUTDIR)
 	-cp $(LIBDIR)/libmaple.patch $(OUTDIR)
-	-cd $(OUTDIR) && patch -p0 < libmaple.patch
+	-cd $(OUTDIR) && patch -p0 -f < libmaple.patch
 
 sdcard:
 	-rsync -a --exclude=.git $(LIBDIR)/sdcard/ $(OUTDIR)/libraries/sdcard
