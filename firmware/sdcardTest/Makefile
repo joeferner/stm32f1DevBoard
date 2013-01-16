@@ -4,9 +4,9 @@
 LIBDIR = ../libs
 OUTDIR = ./build
 
-USER_MODULES=./libraries/sdcard
+USER_MODULES="./libraries/sdcard"
 
-all: libmaple sdcard source
+all: libmaple sdcard usbMassStorage source
 	-cd $(OUTDIR) && export USER_MODULES=$(USER_MODULES) && make
 
 clean:
@@ -16,13 +16,16 @@ outdir:
 	-mkdir -p $(OUTDIR)
 
 libmaple:
-	-rsync -a $(LIBDIR)/libmaple/ $(OUTDIR)
+	-cp -R $(LIBDIR)/libmaple/ $(OUTDIR)
 
 sdcard:
-	-rsync -a $(LIBDIR)/sdcard/ $(OUTDIR)/libraries/sdcard
+	-cp -R $(LIBDIR)/sdcard/ $(OUTDIR)/libraries/sdcard
+
+usbMassStorage:
+	-cp -R $(LIBDIR)/usbMassStorage/ $(OUTDIR)/libraries/usbMassStorage
 
 source:
-	-rsync -a --exclude=build --exclude=nbproject --exclude=Makefile . $(OUTDIR)
+	-cp -R . $(OUTDIR)
 
 install: all
 	-export USER_MODULES=$(USER_MODULES) && \

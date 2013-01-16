@@ -11,7 +11,7 @@ void setup() {
   delay(5000);
   SerialUSB.println("Begin");
   spi1.begin(SPI_QUARTER_SPEED, MSBFIRST, 0);
-  sdcard.init(SPI_QUARTER_SPEED, SDCARD_CS);
+  sdcard.begin(SPI_QUARTER_SPEED, SDCARD_CS);
   
   SerialUSB.print("cardSize:");
   uint32_t cardSize = sdcard.cardSize();

@@ -16,18 +16,18 @@ outdir:
 	-mkdir -p $(OUTDIR)
 
 libmaple:
-	-rsync -a $(LIBDIR)/libmaple/ $(OUTDIR)
+	-cp -R $(LIBDIR)/libmaple/ $(OUTDIR)
 	-cp $(LIBDIR)/libmaple.patch $(OUTDIR)
 	-cd $(OUTDIR) && patch -p0 -f < libmaple.patch
 
 sdcard:
-	-rsync -a --exclude=.git $(LIBDIR)/sdcard/ $(OUTDIR)/libraries/sdcard
+	-cp -R --exclude=.git $(LIBDIR)/sdcard/ $(OUTDIR)/libraries/sdcard
 
 usbMassStorage:
-	-rsync -a --exclude=.git $(LIBDIR)/usbMassStorage/ $(OUTDIR)/libraries/usbMassStorage
+	-cp -R --exclude=.git $(LIBDIR)/usbMassStorage/ $(OUTDIR)/libraries/usbMassStorage
 
 source:
-	-rsync -a --exclude=build --exclude=nbproject --exclude=Makefile . $(OUTDIR)
+	-cp -R --exclude=build --exclude=nbproject --exclude=Makefile . $(OUTDIR)
 
 install: all
 	-export USER_MODULES=$(USER_MODULES) && \
