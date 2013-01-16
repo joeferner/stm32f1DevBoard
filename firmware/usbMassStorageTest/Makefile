@@ -16,18 +16,20 @@ outdir:
 	-mkdir -p $(OUTDIR)
 
 libmaple:
-	-cp -R $(LIBDIR)/libmaple/ $(OUTDIR)
+	-rsync -a $(LIBDIR)/libmaple/ $(OUTDIR)
 	-cp $(LIBDIR)/libmaple.patch $(OUTDIR)
 	-cd $(OUTDIR) && patch -p0 -f < libmaple.patch
+	-cd $(OUTDIR) && touch --date="2004-02-29 16:21:42" libmaple/usb/rules.mk
+	-cd $(OUTDIR) && touch --date="2004-02-29 16:21:42" wirish/include/wirish/boards.h
 
 sdcard:
-	-cp -R --exclude=.git $(LIBDIR)/sdcard/ $(OUTDIR)/libraries/sdcard
+	-rsync -a --exclude=.git $(LIBDIR)/sdcard/ $(OUTDIR)/libraries/sdcard
 
 usbMassStorage:
-	-cp -R --exclude=.git $(LIBDIR)/usbMassStorage/ $(OUTDIR)/libraries/usbMassStorage
+	-rsync -a --exclude=.git $(LIBDIR)/usbMassStorage/ $(OUTDIR)/libraries/usbMassStorage
 
 source:
-	-cp -R --exclude=build --exclude=nbproject --exclude=Makefile . $(OUTDIR)
+	-rsync -a --exclude=build --exclude=nbproject --exclude=Makefile . $(OUTDIR)
 
 install: all
 	-export USER_MODULES=$(USER_MODULES) && \
