@@ -4,11 +4,11 @@
 LIBDIR = ../libs
 OUTDIR = ./build
 
-USER_MODULES="./libraries/sdcard ./libraries/usbMassStorage"
+USER_MODULES="./libraries/sdfat ./libraries/usbMassStorage"
 
-all: libmaple sdcard usbMassStorage source
+all: libmaple sdfat usbMassStorage source
 	-cd $(OUTDIR) && \
-	 export GLOBAL_CFLAGS="-DDISABLE_SERIALUSB -DDEBUG_SDCARD=Serial1" && \
+	 export GLOBAL_CFLAGS="-DDISABLE_SERIALUSB -DDEBUG_SDFAT=Serial1" && \
 	 export USER_MODULES=$(USER_MODULES) && \
 	 make
 
@@ -21,8 +21,8 @@ outdir:
 libmaple:
 	-rsync -a $(LIBDIR)/libmaple/ $(OUTDIR)
 
-sdcard:
-	-rsync -a --exclude=.git $(LIBDIR)/sdcard/ $(OUTDIR)/libraries/sdcard
+sdfat:
+	-rsync -a --exclude=.git $(LIBDIR)/sdfat/ $(OUTDIR)/libraries/sdfat
 
 usbMassStorage:
 	-rsync -a --exclude=.git $(LIBDIR)/usbMassStorage/ $(OUTDIR)/libraries/usbMassStorage

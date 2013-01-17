@@ -1,7 +1,8 @@
 
 #include <wirish/wirish.h>
 #include <usbMassStorage/usbMassStorage.h>
-#include <sdcard/SdCard.h>
+#include <sdfat/Sd2Card.h>
+#include <sdfat/SdFat.h>
 
 #define SDCARD_CS  D10
 #define SDCARD_SPI 1
@@ -10,7 +11,8 @@ uint32_t MAL_massBlockCount[2];
 uint32_t MAL_massBlockSize[2];
 
 HardwareSPI spi1(SDCARD_SPI);
-SdCard sdcard(spi1, SDCARD_CS);
+Sd2Card sdcard(spi1);
+SdVolume sdVolume;
 
 void setup() {
   delay(1000);
@@ -18,15 +20,22 @@ void setup() {
   Serial1.println("begin");
   pinMode(BOARD_LED_PIN, OUTPUT);
   spi1.begin(SPI_QUARTER_SPEED, MSBFIRST, 0);
-  sdcard.begin();
+  sdcard.init(SPI_QUARTER_SPEED, SDCARD_CS);
+  sdVolume.init(&sdcard, 0);
 
   Serial1.println("getCardSize");
-  MAL_massBlockCount[0] = sdcard.getCardSize();
+  MAL_massBlockCount[0] = sdcard.cardSize();
   MAL_massBlockCount[1] = 0;
   MAL_massBlockSize[0] = 512;
   MAL_massBlockSize[1] = 0;
   Serial1.print("cardSize = ");
   Serial1.println((uint32_t) MAL_massBlockCount[0] * 512);
+
+  Serial1.println("ls SDCard");
+  SdFile root;
+  if (root.openRoot(&sdVolume)) {
+    root.ls(LS_R);
+  }
 
   USBMassStorage.begin();
 }
@@ -59,7 +68,7 @@ extern "C" uint16_t usb_mass_mal_init(uint8_t lun) {
 }
 
 extern "C" uint16_t usb_mass_mal_get_status(uint8_t lun) {
-  return sdcard.getErrorCode();
+  return sdcard.errorCode();
 }
 
 extern "C" uint16_t usb_mass_mal_write_memory(uint8_t lun, uint32_t memoryOffset, uint8_t *writebuff, uint16_t transferLength) {
