@@ -22,7 +22,7 @@ libmaple:
 	-rsync -a $(LIBDIR)/libmaple/ $(OUTDIR)
 
 sdfat:
-	-rsync -a --exclude=.git $(LIBDIR)/sdfat/ $(OUTDIR)/libraries/sdfat
+	-rsync -a --exclude=.git $(LIBDIR)/sdfat/maple-sdfat/ $(OUTDIR)/libraries/sdfat
 
 usbMassStorage:
 	-rsync -a --exclude=.git $(LIBDIR)/usbMassStorage/ $(OUTDIR)/libraries/usbMassStorage
