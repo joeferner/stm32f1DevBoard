@@ -1,6 +1,9 @@
 [submodule "firmware/libs/libmaple"]
 	path = firmware/libs/libmaple
-	url = git://github.com/leaflabs/libmaple.git
-[submodule "firmware/libs/sdcard"]
-	path = firmware/libs/sdcard
-	url = git://github.com/joeferner/maple-sdcard
+	url = git://github.com/joeferner/libmaple.git
+[submodule "firmware/libs/sdfat"]
+	path = firmware/libs/sdfat
+	url = git://github.com/joeferner/maple-sdfat-gitclone.git
+[submodule "firmware/libs/usbMassStorage"]
+	path = firmware/libs/usbMassStorage
+	url = git://github.com/joeferner/maple-usbMassStorage.git
