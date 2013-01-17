@@ -1,7 +1,7 @@
 
 #include <wirish/wirish.h>
 #include <usbMassStorage/usbMassStorage.h>
-#include <sdcard/Sd2Card.h>
+#include <sdcard/SdCard.h>
 
 #define SDCARD_CS  D10
 #define SDCARD_SPI 1
@@ -10,7 +10,7 @@ uint32_t MAL_massBlockCount[2];
 uint32_t MAL_massBlockSize[2];
 
 HardwareSPI spi1(SDCARD_SPI);
-Sd2Card sdcard(spi1, SDCARD_CS);
+SdCard sdcard(spi1, SDCARD_CS);
 
 void setup() {
   delay(1000);
