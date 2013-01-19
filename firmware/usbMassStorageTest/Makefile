@@ -8,7 +8,7 @@ USER_MODULES="./libraries/sdfat ./libraries/usbMassStorage"
 
 all: libmaple sdfat usbMassStorage source
 	-cd $(OUTDIR) && \
-	 export GLOBAL_CFLAGS="-DDISABLE_SERIALUSB -DDEBUG_SDFAT=Serial1" && \
+	 export GLOBAL_CFLAGS="-DDEBUG_SDFAT=Serial1" && \
 	 export USER_MODULES=$(USER_MODULES) && \
 	 make
 
