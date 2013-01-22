@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-nov-02)-testing date = Wed 19 Dec 2012 11:05:59 PM EST
+Cmp-Mod V01 Created by CvPcb (2012-nov-02)-testing date = Tue 22 Jan 2013 09:22:26 AM EST
 
 BeginCmp
 TimeStamp = /50CE2AC2/50CE2BEC;
@@ -409,7 +409,14 @@ EndCmp
 BeginCmp
 TimeStamp = /50CE2AC2/50CE2CF0;
 Reference = R18;
-ValeurCmp = ?;
+ValeurCmp = 100;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /50CE30DF/50F8B9A0;
+Reference = R19;
+ValeurCmp = 10k;
 IdModule  = SM0805;
 EndCmp
 
@@ -465,7 +472,7 @@ EndCmp
 BeginCmp
 TimeStamp = /50C960EA;
 Reference = X2;
-ValeurCmp = 20MHz;
+ValeurCmp = 8MHz;
 IdModule  = HC-49V;
 EndCmp
 

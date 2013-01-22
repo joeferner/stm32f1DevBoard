@@ -1,13 +1,14 @@
-EESchema Schematic File Version 2  date Thu 17 Jan 2013 09:41:47 PM EST
+EESchema Schematic File Version 2  date Mon 21 Jan 2013 10:28:50 PM EST
 LIBS:userFavorites
 LIBS:power
+LIBS:stm32f1DevBoard-cache
 EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 4 4
 Title ""
-Date "18 jan 2013"
+Date "22 jan 2013"
 Rev ""
 Comp ""
 Comment1 ""

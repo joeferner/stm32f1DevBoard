@@ -1,13 +1,14 @@
-EESchema Schematic File Version 2  date Thu 17 Jan 2013 09:41:47 PM EST
+EESchema Schematic File Version 2  date Mon 21 Jan 2013 10:28:50 PM EST
 LIBS:userFavorites
 LIBS:power
+LIBS:stm32f1DevBoard-cache
 EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 4
 Title ""
-Date "18 jan 2013"
+Date "22 jan 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -101,7 +102,7 @@ L CRYSTAL X2
 U 1 1 50C960EA
 P 3550 2900
 F 0 "X2" H 3550 3025 60  0000 C CNN
-F 1 "20MHz" H 3550 2775 60  0000 C CNN
+F 1 "8MHz" H 3550 2775 60  0000 C CNN
 	1    3550 2900
 	1    0    0    -1  
 $EndComp
