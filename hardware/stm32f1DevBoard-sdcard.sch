@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tue 29 Jan 2013 12:07:46 AM EST
+EESchema Schematic File Version 2  date Tue 29 Jan 2013 11:51:38 AM EST
 LIBS:userFavorites
 LIBS:power
 LIBS:stm32f1DevBoard-cache
