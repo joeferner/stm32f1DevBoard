@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tue 29 Jan 2013 11:51:38 AM EST
+EESchema Schematic File Version 2  date Thu 31 Jan 2013 11:01:55 PM EST
 LIBS:userFavorites
 LIBS:power
 LIBS:stm32f1DevBoard-cache
@@ -8,7 +8,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 4
 Title ""
-Date "29 jan 2013"
+Date "1 feb 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -354,7 +354,7 @@ L USB_2 J1
 U 1 1 50CC0796
 P 1600 3500
 F 0 "J1" H 1525 3750 60  0000 C CNN
-F 1 "USB_2" H 1650 3200 60  0001 C CNN
+F 1 "USB_2" H 1650 3150 60  0001 C CNN
 F 4 "VCC" H 1925 3650 50  0001 C CNN "VCC"
 F 5 "D+" H 1900 3550 50  0001 C CNN "Data+"
 F 6 "D-" H 1900 3450 50  0001 C CNN "Data-"
@@ -611,13 +611,9 @@ Wire Wire Line
 Wire Wire Line
 	3850 3350 3850 3450
 Wire Wire Line
-	3850 3450 1800 3450
-Wire Wire Line
 	3900 3650 3850 3650
 Wire Wire Line
 	3850 3650 3850 3550
-Wire Wire Line
-	3850 3550 1800 3550
 Wire Wire Line
 	1800 3650 2700 3650
 Wire Wire Line
@@ -957,4 +953,24 @@ Connection ~ 9100 3050
 Wire Wire Line
 	9200 3150 9100 3150
 Connection ~ 9100 3150
+Wire Wire Line
+	1800 3450 2000 3450
+Wire Wire Line
+	2000 3450 2000 3550
+Wire Wire Line
+	2000 3550 3850 3550
+Wire Wire Line
+	1800 3550 1950 3550
+Wire Wire Line
+	1950 3550 1950 3500
+Wire Wire Line
+	1950 3500 2050 3500
+Wire Wire Line
+	2050 3500 2050 3450
+Wire Wire Line
+	2050 3450 3850 3450
+Text Label 3150 3550 0    60   ~ 0
+USBD-
+Text Label 3150 3450 0    60   ~ 0
+USBD+
 $EndSCHEMATC
