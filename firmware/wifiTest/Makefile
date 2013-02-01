@@ -10,7 +10,7 @@ all: libmaple sdfat usbMassStorage mrf24w source
 	-cd $(OUTDIR) && \
 	 export GLOBAL_CFLAGS="-DDEBUG_SDFAT=Serial1" && \
 	 export USER_MODULES=$(USER_MODULES) && \
-	 make
+	 make BOARD=maple_mini MEMORY_TARGET=jtag
 
 clean:
 	-rm -rf $(OUTDIR)
