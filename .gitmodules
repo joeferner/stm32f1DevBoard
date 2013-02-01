@@ -6,4 +6,4 @@
 	url = git://github.com/joeferner/maple-usbMassStorage.git
 [submodule "firmware/libs/libmaple"]
 	path = firmware/libs/libmaple
-	url = git://github.com/joeferner/libmaple.git
+	url = git://github.com/leaflabs/libmaple.git
