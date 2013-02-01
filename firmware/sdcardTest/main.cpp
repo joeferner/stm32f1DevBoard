@@ -1,47 +1,55 @@
 
 #include <wirish/wirish.h>
-#include <sdcard/Sd2Card.h>
+#include <sdfat/Sd2Card.h>
 
-#define SDCARD_CS  D10
+#define SDCARD_SPI 1
+#define SDCARD_CS  PA0
 
-HardwareSPI spi1(1);
-Sd2Card sdcard(spi1, SDCARD_CS);
+HardwareSPI spi1(SDCARD_SPI);
+Sd2Card sdcard(spi1);
 
 void setup() {
+  Serial1.begin(9600);
+  Serial1.println("begin");
+
+  enableDebugPorts();
+  delay(5000);
+  disableDebugPorts();
+  
   uint8_t blockBuffer[512];
   for (int i = 0; i < 512; i++) {
-    blockBuffer[0];
+    blockBuffer[i] = 0;
   }
 
-  delay(5000);
-  SerialUSB.println("Begin");
+  Serial1.println("spi begin");
   spi1.begin(SPI_QUARTER_SPEED, MSBFIRST, 0);
-  sdcard.begin();
+  Serial1.println("sdcard begin");
+  sdcard.init(SPI_QUARTER_SPEED, SDCARD_CS);
+  Serial1.println(sdcard.errorData());
 
-  SerialUSB.print("cardSize:");
-  uint32_t cardSize = sdcard.getCardSize();
-  SerialUSB.println(cardSize);
+  Serial1.print("cardSize:");
+  uint32_t cardSize = sdcard.cardSize();
+  Serial1.println(cardSize);
 
-  SerialUSB.println("block(0):");
+  Serial1.println("block(0):");
   sdcard.readBlock(0, blockBuffer);
   for (int i = 0; i < 512;) {
     for (int col = 0; col < 16; col++, i++) {
-      SerialUSB.print(blockBuffer[i], 16);
-      SerialUSB.print(" ");
+      Serial1.print(blockBuffer[i], 16);
+      Serial1.print(" ");
     }
-    SerialUSB.println();
+    Serial1.println();
   }
 
-  SerialUSB.print("cardSize:");
-  cardSize = sdcard.getCardSize();
-  SerialUSB.println(cardSize);
+  Serial1.print("cardSize:");
+  cardSize = sdcard.cardSize();
+  Serial1.println(cardSize);
 
   pinMode(BOARD_LED_PIN, OUTPUT);
 }
 
 void loop() {
   togglePin(BOARD_LED_PIN);
-  SerialUSB.println("Working");
   delay(1000);
 }
 

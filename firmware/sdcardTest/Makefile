@@ -4,10 +4,10 @@
 LIBDIR = ../libs
 OUTDIR = ./build
 
-USER_MODULES="./libraries/sdcard"
+USER_MODULES="./libraries/sdfat"
 
-all: libmaple sdcard usbMassStorage source
-	-cd $(OUTDIR) && export USER_MODULES=$(USER_MODULES) && make
+all: libmaple sdfat usbMassStorage source
+	-cd $(OUTDIR) && export USER_MODULES=$(USER_MODULES) && make BOARD=maple_mini MEMORY_TARGET=jtag
 
 clean:
 	-rm -rf $(OUTDIR)
@@ -18,8 +18,8 @@ outdir:
 libmaple:
 	-rsync -a $(LIBDIR)/libmaple/ $(OUTDIR)
 
-sdcard:
-	-rsync -a --exclude=.git $(LIBDIR)/sdcard/ $(OUTDIR)/libraries/sdcard
+sdfat:
+	-rsync -a --exclude=.git $(LIBDIR)/sdfat/maple-sdfat/ $(OUTDIR)/libraries/sdfat
 
 usbMassStorage:
 	-rsync -a --exclude=.git $(LIBDIR)/usbMassStorage/ $(OUTDIR)/libraries/usbMassStorage
