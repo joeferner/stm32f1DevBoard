@@ -12,12 +12,12 @@
  * enter the bootloader respectively.
  * 
  *   Connections:
- *      D10             -> SDCard.CS
- *      D11 (SPI1 MOSI) -> SDCard.DI
- *      D12 (SPI1 MISO) -> SDCard.DO
- *      D13 (SPI1 SCK)  -> SDCard.CLK
+ *      PA0             -> SDCard.CS
+ *      PA7 (SPI1 MOSI) -> SDCard.DI
+ *      PA6 (SPI1 MISO) -> SDCard.DO
+ *      PA5 (SPI1 SCK)  -> SDCard.CLK
  */
-#define SDCARD_CS  D10
+#define SDCARD_CS  PA0
 #define SDCARD_SPI 1
 
 uint32_t MAL_massBlockCount[2];
@@ -35,10 +35,16 @@ void reboot();
 void enterBootloader();
 
 void setup() {
-  delay(1000); // not needed just easier to debug
   Serial1.begin(9600);
   Serial1.println("begin");
+
+  enableDebugPorts();
+  //delay(5000);
+  //disableDebugPorts();
+  
+  Serial1.println("spi begin");
   spi1.begin(SPI_QUARTER_SPEED, MSBFIRST, 0);
+  Serial1.println("sdcard begin");
   sdcard.init(SPI_QUARTER_SPEED, SDCARD_CS);
   sdVolume.init(&sdcard, 0);
 
@@ -145,14 +151,18 @@ uint8_t initCard() {
  */
 
 extern "C" uint16_t usb_mass_mal_init(uint8_t lun) {
+  //Serial1.println("usb_mass_mal_init");
   return 0;
 }
 
 extern "C" uint16_t usb_mass_mal_get_status(uint8_t lun) {
+  //Serial1.print("usb_mass_mal_get_status: ");
+  //Serial1.println(sdcard.errorCode());
   return sdcard.errorCode();
 }
 
 extern "C" uint16_t usb_mass_mal_write_memory(uint8_t lun, uint32_t memoryOffset, uint8_t *writebuff, uint16_t transferLength) {
+  //Serial1.println("usb_mass_mal_write_memory");
   uint32_t block = memoryOffset / 512;
   if (block == rebootFileBlock) {
     reboot();
@@ -173,6 +183,7 @@ extern "C" uint16_t usb_mass_mal_write_memory(uint8_t lun, uint32_t memoryOffset
 }
 
 extern "C" uint16_t usb_mass_mal_read_memory(uint8_t lun, uint32_t memoryOffset, uint8_t *readbuff, uint16_t transferLength) {
+  //Serial1.println("usb_mass_mal_read_memory");
   if (lun != 0) {
     return USB_MASS_MAL_FAIL;
   }
