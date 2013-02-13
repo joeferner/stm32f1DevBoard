@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-nov-02)-testing date = Tue 22 Jan 2013 09:22:26 AM EST
+Cmp-Mod V01 Created by CvPcb (2012-nov-02)-testing date = Tue 12 Feb 2013 08:39:49 PM EST
 
 BeginCmp
 TimeStamp = /50CE2AC2/50CE2BEC;
@@ -24,14 +24,14 @@ EndCmp
 BeginCmp
 TimeStamp = /50C96435;
 Reference = C3;
-ValeurCmp = 22pF;
+ValeurCmp = 18pF;
 IdModule  = SM0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /50C9644B;
 Reference = C4;
-ValeurCmp = 22pF;
+ValeurCmp = 18pF;
 IdModule  = SM0805;
 EndCmp
 
@@ -59,14 +59,14 @@ EndCmp
 BeginCmp
 TimeStamp = /50C9642F;
 Reference = C8;
-ValeurCmp = 22pF;
+ValeurCmp = 18pF;
 IdModule  = SM0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /50C9643B;
 Reference = C9;
-ValeurCmp = 22pF;
+ValeurCmp = 18pF;
 IdModule  = SM0805;
 EndCmp
 
@@ -127,9 +127,30 @@ IdModule  = SM0805;
 EndCmp
 
 BeginCmp
-TimeStamp = /50CE2AC2/50CE2C0B;
+TimeStamp = /50CE2AC2/510BDE91;
+Reference = C18;
+ValeurCmp = 100uF;
+IdModule  = CAP-CAN-5mm;
+EndCmp
+
+BeginCmp
+TimeStamp = /51127749;
+Reference = C19;
+ValeurCmp = 47pF;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /5112774F;
+Reference = C20;
+ValeurCmp = 47pF;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /50CE2AC2/511AEE72;
 Reference = D1;
-ValeurCmp = DIODE;
+ValeurCmp = DIODESCH;
 IdModule  = DO-214AC(SMA);
 EndCmp
 
@@ -138,6 +159,13 @@ TimeStamp = /50CE2AC2/50CE2CEA;
 Reference = D2;
 ValeurCmp = POWERLED;
 IdModule  = LED-1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /511AEC59;
+Reference = D3;
+ValeurCmp = DIODESCH;
+IdModule  = DO-214AC(SMA);
 EndCmp
 
 BeginCmp
@@ -166,13 +194,6 @@ TimeStamp = /50CE30DF/50CE3303;
 Reference = J3;
 ValeurCmp = SDCARD;
 IdModule  = SDCARD;
-EndCmp
-
-BeginCmp
-TimeStamp = /50CBF4F7;
-Reference = JP1;
-ValeurCmp = JTAG_ENABLE;
-IdModule  = PIN_ARRAY_2X1;
 EndCmp
 
 BeginCmp
@@ -288,6 +309,13 @@ IdModule  = SOT223-321;
 EndCmp
 
 BeginCmp
+TimeStamp = /51127EE6;
+Reference = Q2;
+ValeurCmp = MOSFET-P;
+IdModule  = SOT23;
+EndCmp
+
+BeginCmp
 TimeStamp = /50CBE933;
 Reference = R1;
 ValeurCmp = 10k;
@@ -395,14 +423,14 @@ EndCmp
 BeginCmp
 TimeStamp = /50CE2AC2/50CE2C36;
 Reference = R16;
-ValeurCmp = 100k;
+ValeurCmp = 10k;
 IdModule  = SM0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /50CE2AC2/50CE2C3C;
 Reference = R17;
-ValeurCmp = 100k;
+ValeurCmp = 10k;
 IdModule  = SM0805;
 EndCmp
 
@@ -416,6 +444,13 @@ EndCmp
 BeginCmp
 TimeStamp = /50CE30DF/50F8B9A0;
 Reference = R19;
+ValeurCmp = 10k;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /5112814F;
+Reference = R20;
 ValeurCmp = 10k;
 IdModule  = SM0805;
 EndCmp

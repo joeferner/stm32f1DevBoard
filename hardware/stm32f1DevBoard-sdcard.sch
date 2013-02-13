@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Thu 31 Jan 2013 11:01:55 PM EST
+EESchema Schematic File Version 2  date Tue 12 Feb 2013 08:34:35 PM EST
 LIBS:userFavorites
 LIBS:power
 LIBS:stm32f1DevBoard-cache
@@ -8,7 +8,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 4 4
 Title ""
-Date "1 feb 2013"
+Date "13 feb 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -26,19 +26,19 @@ F 1 "SDCARD" H 6100 3050 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +3.3V #PWR057
+L +3.3V #PWR061
 U 1 1 50CE3309
 P 5500 3150
-F 0 "#PWR057" H 5500 3110 30  0001 C CNN
+F 0 "#PWR061" H 5500 3110 30  0001 C CNN
 F 1 "+3.3V" H 5500 3260 30  0000 C CNN
 	1    5500 3150
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR058
+L GND #PWR062
 U 1 1 50CE330F
 P 5500 4400
-F 0 "#PWR058" H 5500 4400 30  0001 C CNN
+F 0 "#PWR062" H 5500 4400 30  0001 C CNN
 F 1 "GND" H 5500 4330 30  0001 C CNN
 	1    5500 4400
 	1    0    0    -1  
@@ -72,19 +72,19 @@ F 1 "0.1uF" H 7775 4550 30  0000 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +3.3V #PWR059
+L +3.3V #PWR063
 U 1 1 50CE332A
 P 7750 4400
-F 0 "#PWR059" H 7750 4360 30  0001 C CNN
+F 0 "#PWR063" H 7750 4360 30  0001 C CNN
 F 1 "+3.3V" H 7750 4510 30  0000 C CNN
 	1    7750 4400
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR060
+L GND #PWR064
 U 1 1 50CE3330
 P 7750 4800
-F 0 "#PWR060" H 7750 4800 30  0001 C CNN
+F 0 "#PWR064" H 7750 4800 30  0001 C CNN
 F 1 "GND" H 7750 4730 30  0001 C CNN
 	1    7750 4800
 	1    0    0    -1  
@@ -113,10 +113,10 @@ F 1 "10k" H 5260 3000 60  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L +3.3V #PWR061
+L +3.3V #PWR065
 U 1 1 50F8B9B2
 P 5250 2800
-F 0 "#PWR061" H 5250 2760 30  0001 C CNN
+F 0 "#PWR065" H 5250 2760 30  0001 C CNN
 F 1 "+3.3V" H 5250 2910 30  0000 C CNN
 	1    5250 2800
 	1    0    0    -1  
