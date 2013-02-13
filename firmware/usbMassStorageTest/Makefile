@@ -6,11 +6,13 @@ OUTDIR = ./build
 
 USER_MODULES="./libraries/sdfat ./libraries/usbMassStorage"
 
+# MEMORY_TARGET=jtag
+
 all: libmaple sdfat usbMassStorage source
 	-cd $(OUTDIR) && \
 	 export GLOBAL_CFLAGS="-DDEBUG_SDFAT=Serial1" && \
 	 export USER_MODULES=$(USER_MODULES) && \
-	 make BOARD=maple_mini MEMORY_TARGET=jtag
+	 make BOARD=maple_mini
 
 clean:
 	-rm -rf $(OUTDIR)
@@ -32,4 +34,5 @@ source:
 
 install: all
 	cd $(OUTDIR) && \
-	sudo make install
+	export USER_MODULES=$(USER_MODULES) && \
+	sudo make BOARD=maple_mini install
