@@ -16,18 +16,18 @@
 
 #define ECHO_PORT 8000
 
-uint8_t wifiLocalIp[] = {10, 20, 8, 77};
-uint8_t wifiGatewayIp[] = {10, 20, 8, 1};
+uint8_t wifiLocalIp[] = {192, 168, 1, 99};
+uint8_t wifiGatewayIp[] = {192, 168, 1, 1};
 uint8_t wifiSubnetMask[] = {255, 255, 255, 0};
-const char* wifiSSID = "RHE";
+const char* wifiSSID = "STMWIFI";
 const char* wifiSecurityPassphrase = "";
-uint8_t wifiSecurityType = ZG_SECURITY_TYPE_NONE;
-uint8_t wifiWirelessMode = ZG_WIRELESS_MODE_INFRA;
+uint8_t wifiSecurityType = WF_SECURITY_OPEN;
+uint8_t wifiWirelessMode = WF_INFRASTRUCTURE;
 
 HardwareSPI spi1(WIFI_SPI);
 Mrf24w wifi(spi1, WIFI_CS, WIFI_INT);
 
-void wifiConnected(uint8_t connected);
+void wifiProcessEvent(uint8_t event, uint16_t eventInfo, uint8_t* extraInfo);
 
 void setup() {
   Serial1.begin(9600);
@@ -36,12 +36,12 @@ void setup() {
   enableDebugPorts();
   //delay(5000);
   //disableDebugPorts();
-  
+
   pinMode(SDCARD_CS, OUTPUT);
   digitalWrite(SDCARD_CS, HIGH);
   pinMode(WIFI_CS, OUTPUT);
   digitalWrite(WIFI_CS, HIGH);
-  
+
   pinMode(WIFI_RESET, OUTPUT);
   pinMode(WIFI_HIBERNATE, OUTPUT);
   digitalWrite(WIFI_HIBERNATE, LOW);
@@ -56,7 +56,13 @@ void setup() {
   delay(100);
   digitalWrite(WIFI_RESET, HIGH);
 
-  wifi.setConnectedFn(wifiConnected);
+  wifi.setProcessEventFn(wifiProcessEvent);
+  Serial1.println("wifi begin");
+  wifi.begin();
+  Serial1.println("wifi begin complete");
+
+  //wifi.scan(WF_SCAN_ALL);
+
   wifi.setLocalIp(wifiLocalIp);
   wifi.setGatewayIp(wifiGatewayIp);
   wifi.setSubnetMask(wifiSubnetMask);
@@ -64,19 +70,17 @@ void setup() {
   wifi.setSecurityPassphrase(wifiSecurityPassphrase);
   wifi.setSecurityType(wifiSecurityType);
   wifi.setWirelessMode(wifiWirelessMode);
-  Serial1.println("wifi begin");
-  wifi.begin();
-  Serial1.println("wifi begin complete");
+  wifi.connect();
 
   uip_listen(HTONS(ECHO_PORT));
 }
 
 void loop() {
   wifi.loop();
-  
-  while(Serial1.available() > 0) {
+
+  while (Serial1.available() > 0) {
     uint8_t b = Serial1.read();
-    if(b == 'r') {
+    if (b == 'r') {
       Serial1.println("rebooting 1sec");
       delay(1000);
       nvic_sys_reset();
@@ -120,11 +124,18 @@ extern "C" void uip_log(char *msg) {
   Serial1.println(msg);
 }
 
-void wifiConnected(uint8_t connected) {
-  if (connected) {
-    digitalWrite(WIFI_CONNECTION_LED, HIGH);
-  } else {
-    digitalWrite(WIFI_CONNECTION_LED, LOW);
+void wifiProcessEvent(uint8_t event, uint16_t eventInfo, uint8_t* extraInfo) {
+  switch (event) {
+    case WF_EVENT_CONNECTION_SUCCESSFUL:
+    case WF_EVENT_CONNECTION_REESTABLISHED:
+      digitalWrite(WIFI_CONNECTION_LED, HIGH);
+      break;
+
+    case WF_EVENT_CONNECTION_PERMANENTLY_LOST:
+    case WF_EVENT_CONNECTION_TEMPORARILY_LOST:
+    case WF_EVENT_CONNECTION_FAILED:
+      digitalWrite(WIFI_CONNECTION_LED, LOW);
+      break;
   }
 }
 
