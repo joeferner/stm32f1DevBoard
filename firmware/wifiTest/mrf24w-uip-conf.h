@@ -7,10 +7,12 @@ extern "C" {
 #endif
 
   void echo_appcall(void);
+  void echo_udp_appcall(void);
   void uip_log(char *msg);
   void zg_LEDConn_off();
   void zg_LEDConn_on();
 #define UIP_APPCALL     echo_appcall
+#define UIP_UDP_APPCALL echo_udp_appcall
 
   typedef enum echo_state_enum_t {
     ECHO_STATE_WELCOME_SENT,
@@ -22,6 +24,7 @@ extern "C" {
   };
 
   typedef struct echo_state* uip_tcp_appstate_t;
+  typedef struct echo_state* uip_udp_appstate_t;
 
 #ifdef	__cplusplus
 }

@@ -19,10 +19,10 @@
 uint8_t wifiLocalIp[] = {192, 168, 1, 99};
 uint8_t wifiGatewayIp[] = {192, 168, 1, 1};
 uint8_t wifiSubnetMask[] = {255, 255, 255, 0};
-const char* wifiSSID = "STMWIFI";
+const char* wifiSSID = "STMWIFI"; //"STMTEST";
 const char* wifiSecurityPassphrase = "";
 uint8_t wifiSecurityType = WF_SECURITY_OPEN;
-uint8_t wifiWirelessMode = WF_INFRASTRUCTURE;
+uint8_t wifiWirelessMode = WF_INFRASTRUCTURE; //WF_ADHOC;
 
 HardwareSPI spi1(WIFI_SPI);
 Mrf24w wifi(spi1, WIFI_CS, WIFI_INT);
@@ -30,7 +30,7 @@ Mrf24w wifi(spi1, WIFI_CS, WIFI_INT);
 void wifiProcessEvent(uint8_t event, uint16_t eventInfo, uint8_t* extraInfo);
 
 void setup() {
-  Serial1.begin(9600);
+  Serial1.begin(19200);
   Serial1.println("begin");
 
   enableDebugPorts();
@@ -58,11 +58,6 @@ void setup() {
 
   wifi.setProcessEventFn(wifiProcessEvent);
   Serial1.println("wifi begin");
-  wifi.begin();
-  Serial1.println("wifi begin complete");
-
-  //wifi.scan(WF_SCAN_ALL);
-
   wifi.setLocalIp(wifiLocalIp);
   wifi.setGatewayIp(wifiGatewayIp);
   wifi.setSubnetMask(wifiSubnetMask);
@@ -70,10 +65,18 @@ void setup() {
   wifi.setSecurityPassphrase(wifiSecurityPassphrase);
   wifi.setSecurityType(wifiSecurityType);
   wifi.setWirelessMode(wifiWirelessMode);
+  wifi.begin();
+  Serial1.println("wifi begin complete");
+
+  //wifi.scan(WF_SCAN_ALL);
+
   wifi.connect();
 
-  uip_listen(HTONS(ECHO_PORT));
+  //uip_listen(HTONS(ECHO_PORT));
 }
+
+int ssss = 0;
+struct uip_udp_conn *c;
 
 void loop() {
   wifi.loop();
@@ -85,6 +88,40 @@ void loop() {
       delay(1000);
       nvic_sys_reset();
     }
+
+    if (b == 'c') {
+      uip_ipaddr_t addr;
+
+      uip_ipaddr(&addr, 192, 168, 1, 101);
+      c = uip_udp_new(&addr, HTONS(1234));
+      ssss = 0;
+      if (c != NULL) {
+        uip_udp_bind(c, HTONS(1234));
+        Serial1.println("udp_new");
+      } else {
+        Serial1.println("udp_new fail");
+      }
+    }
+  }
+}
+
+extern "C" void echo_udp_appcall() {
+  Serial1.print("echo_udp_appcall: ");
+  Serial1.println(ssss);
+
+  if (uip_newdata()) {
+    Serial1.print("new data: ");
+    Serial1.println(uip_datalen());
+    for (int i = 0; i < uip_datalen(); i++) {
+      char ch = (char)((uint8_t*)uip_appdata)[i];
+      Serial1.print(ch);
+    }
+    Serial1.println();
+  } else if (uip_poll()) {
+    if ((ssss % 10) == 0) {
+      uip_send("test", 4);
+    }
+    ssss++;
   }
 }
 
