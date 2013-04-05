@@ -92,7 +92,7 @@ void loop() {
     if (b == 'c') {
       uip_ipaddr_t addr;
 
-      uip_ipaddr(&addr, 192, 168, 1, 101);
+      uip_ipaddr(&addr, 192, 168, 1, 100);
       c = uip_udp_new(&addr, HTONS(1234));
       ssss = 0;
       if (c != NULL) {
